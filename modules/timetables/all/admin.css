@@ -1,0 +1,167 @@
+/* modules/timetables/all/admin.css - updated fixes */
+
+/* header & main panel */
+.rad-tt-header { padding:14px 16px; margin-bottom:12px; border-radius:8px; background: linear-gradient(180deg,#f8fafc,#fff); border:1px solid #eef2f6; }
+.rad-tt-header h2 { margin:0; font-size:18px; font-weight:700; color:#2b2b7a; text-align:center; }
+
+.rad-tt-main { padding:12px; background:#fff; border-radius:8px; border:1px solid #eef2f6; box-shadow: 0 6px 18px rgba(15,23,42,0.03); }
+
+/* accordion styles */
+.rad-tt-accordion { display:block; gap:12px; }
+.rad-tt-accordion-item { margin-bottom:10px; border-radius:8px; overflow:hidden; background:transparent; border:1px solid transparent; }
+
+/* --- SLIMMER HEADER --- */
+.rad-tt-acc-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  padding:8px 10px; /* was 14px 16px */
+  background:#eef4ff;
+  border-radius:8px;
+  cursor:pointer;
+  border:1px solid rgba(59,130,246,0.06);
+  font-weight:600;
+  color:#111827;
+  font-size:14px;
+}
+.rad-tt-acc-header .rad-tt-title { font-weight:700; font-size:14px; }
+
+/* Right side actions (arrow + delete) */
+.rad-tt-header-actions{ display:flex; align-items:center; gap:8px; }
+
+/* --- ICON-ONLY BUTTONS (NO GREY BG) --- */
+.rad-tt-del-class,
+.rad-tt-chevron{
+  appearance:none;
+  background:none;   /* remove grey background */
+  border:0;
+  padding:0 6px;
+  height:24px;
+  width:24px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:6px;
+  cursor:pointer;
+  color:inherit;
+}
+
+
+/* NEW: Export button (Delete ke bagal me) */
+.rad-tt-export{
+  background:#0f172a;
+  border:0;
+  color:#fff;
+  font-size:11px;
+  padding:4px 10px;
+  border-radius:999px;
+  cursor:pointer;
+  opacity:0;                    /* hover par hi dikhe */
+  transition:opacity .15s ease;
+}
+.rad-tt-acc-header:hover .rad-tt-export{
+  opacity:1;
+}
+.rad-tt-export:hover{
+  transform:translateY(-0.5px);
+}
+
+
+
+/* Arrow always visible */
+.rad-tt-chevron{ font-size:14px; opacity:0.85; }
+
+/* --- DELETE ONLY ON HOVER --- */
+.rad-tt-del-class{
+  font-size:14px;
+  color:#ef4444;
+  opacity:0;                    /* hidden by default */
+  transition:opacity .15s ease; /* smooth reveal */
+}
+.rad-tt-acc-header:hover .rad-tt-del-class{ opacity:1; }
+
+/* Tiny hover feedback without background blocks */
+.rad-tt-chevron:hover,
+.rad-tt-del-class:hover{ transform:translateY(-0.5px); }
+
+.rad-tt-acc-panel { display:none; padding:12px; background:#fff; border:1px solid #eef2f6; border-top:none; border-radius:0 0 8px 8px; position:relative; }
+.rad-tt-accordion-item.open .rad-tt-acc-panel { display:block; }
+
+.rad-tt-edit-btn { position:absolute; right:14px; top:10px; background:#071235; color:#fff; border:0; padding:6px 10px; border-radius:6px; font-size:13px; cursor:pointer; box-shadow: 0 6px 16px rgba(15,23,42,0.08); display:none; }
+.rad-tt-accordion-item.open .rad-tt-edit-btn { display:inline-block; }
+
+/* timetable grid */
+.rad-tt-grid { width:100%; border-collapse:collapse; table-layout:fixed; font-size:13px; }
+.rad-tt-grid thead th { background:#eef4ff; color:#2b2b7a; padding:10px; border:1px solid #e6eef8; font-weight:700; text-align:center; font-size:13px; }
+.rad-tt-grid tbody td { border:1px solid #eef2f6; padding:10px; vertical-align:top; min-height:56px; text-align:center; }
+.rad-tt-day { font-weight:600; background:#fafaff; color:#1f2937; width:160px; text-align:left; padding-left:12px; font-size:13px; }
+.rad-tt-periodhead { font-size:12px; padding:8px; }
+
+/* subject & teacher presentation */
+.rad-tt-subject { color:#4b0082; font-weight:700; margin-bottom:6px; font-size:13px; text-transform:uppercase; letter-spacing:0.5px; }
+.rad-tt-teacher { color:#6b7280; font-size:12px; margin-bottom:4px; }
+
+/* editor modal */
+.rad-tt-editor-modal { position:fixed; left:0; top:0; right:0; bottom:0; z-index:12000; display:flex; align-items:center; justify-content:center; }
+.rad-tt-editor-overlay { position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(10,10,10,0.45); }
+.rad-tt-editor-dialog { width:92%; max-width:1100px; background:#fff; border-radius:8px; box-shadow:0 20px 60px rgba(2,6,23,0.35); z-index:12010; overflow:auto; max-height:92vh; }
+.rad-tt-editor-header { display:flex; justify-content:space-between; align-items:center; padding:16px 18px; border-bottom:1px solid #eef4fb; background:linear-gradient(180deg,#f8fbff,#fff); }
+.rad-tt-editor-header h3 { margin:0; font-size:20px; color:#111827; font-weight:700; }
+.rad-tt-editor-close { background:#0f172a; color:#fff; border:0; padding:8px 12px; border-radius:6px; cursor:pointer; font-size:16px; }
+
+/* editor body & wrap */
+.rad-tt-editor-body { padding:18px; }
+.rad-tt-editor-wrap { margin-top:12px; border-radius:6px; background:#fcfeff; padding:12px; border:1px dashed #e7eef8; }
+.rad-tt-editor-class { font-weight:700; margin-bottom:8px; color:#0f172a; }
+.rad-tt-applyrow { margin-bottom:12px; display:flex; align-items:center; gap:8px; color:#374151; font-size:14px; }
+
+/* days tabs */
+.rad-tt-days-tabs { display:flex; gap:8px; margin-bottom:12px; }
+.rad-tt-daytab { flex:1 1 0; background:#f1f5f9; border:1px solid #e6eef8; padding:10px 12px; border-radius:8px; cursor:pointer; font-weight:600; color:#374151; }
+.rad-tt-daytab.active { background:#fff; border-color:#c7ddff; box-shadow:0 2px 6px rgba(59,130,246,0.06); color:#1f2937; }
+
+/* period list (editor) */
+.rad-tt-periods-list { margin-top:6px; }
+.rad-tt-period-card { border:1px solid #e9eef6; border-radius:6px; overflow:hidden; margin-bottom:10px; background:#fff; }
+.rad-tt-period-title { display:flex; justify-content:space-between; align-items:center; padding:12px; cursor:pointer; font-weight:600; color:#111827; background:#fbfdff; }
+.rad-tt-period-title-left { font-weight:600; }
+
+/* right side (trash + caret) */
+.rad-tt-period-head-right { display:flex; gap:8px; align-items:center; }
+.rad-tt-collapse-toggle { background:transparent; border:0; font-size:16px; cursor:pointer; padding:6px; color:#111827; }
+
+/* trash (red) - appears on hover or when open */
+.rad-tt-del-icon { background:transparent; border:0; font-size:14px; color:#ef4444; cursor:pointer; padding:4px; display:none; }
+.rad-tt-period-card:hover .rad-tt-del-icon { display:inline-block; }
+
+/* body collapsed / open */
+.rad-tt-period-body { padding:12px; display:none; background:#f8fbff; border-top:1px solid #eef2f6; }
+.rad-tt-period-card.open .rad-tt-period-body { display:block; }
+
+/* inputs and spinner */
+.rad-tt-input { display:block; width:100%; padding:8px 10px; margin:8px 0 12px 0; border:1px solid #dbeafe; border-radius:6px; font-size:13px; background:#fff; }
+.rad-tt-times-row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.rad-tt-times-col { flex:1 1 240px; min-width:160px; }
+.rad-tt-time-spinner select { padding:6px 8px; border-radius:6px; border:1px solid #e6eef8; margin-right:6px; }
+
+/* add + actions */
+.rad-tt-add-period { display:block; width:100%; padding:12px 18px; border-radius:8px; background: linear-gradient(180deg,#10b981,#059669); color:#fff; font-weight:700; border:0; cursor:pointer; margin-top:8px; }
+.rad-tt-editor-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:12px; }
+.rad-tt-save-btn { background:#0f172a; color:#fff; border:0; padding:10px 18px; border-radius:8px; cursor:pointer; }
+
+/* fix: ensure cancel always visible (no hover-only) */
+.rad-tt-cancel-btn { background:#fff; border:1px solid #e6eef8; padding:10px 14px; border-radius:8px; cursor:pointer; display:inline-block !important; opacity:1 !important; visibility:visible !important; }
+
+/* toast */
+.rad-tt-toast { position:fixed; right:20px; bottom:20px; padding:10px 14px; border-radius:8px; color:#fff; background:#059669; box-shadow:0 8px 22px rgba(2,6,23,0.2); transition:opacity .25s; opacity:0; }
+
+/* responsive */
+@media (max-width:980px){
+  .rad-tt-grid thead th, .rad-tt-grid tbody td { font-size:12px; padding:8px; }
+  .rad-tt-day { width:100px; font-size:12px; }
+  .rad-tt-header h2 { font-size:16px; }
+  .rad-tt-editor-dialog { width:96%; max-width:900px; }
+  
+  
+}

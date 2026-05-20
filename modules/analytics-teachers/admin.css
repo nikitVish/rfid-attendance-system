@@ -1,0 +1,141 @@
+/* modules/analytics-teachers/admin.css */
+
+/* Toolbar */
+.rad-analytics-toolbar{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+/* Duo cards row — same look, now fills full width with 4 equal columns */
+.rad-duo-cards{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  gap:32px;
+  margin-bottom:16px;
+}
+
+/* Card shell */
+.rad-duo-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  background:#ffffff;
+  border:1px solid #e8edf5;
+  border-radius:10px;
+  padding:16px 20px;
+  box-shadow:0 6px 18px rgba(15,23,42,0.03);
+}
+
+.rad-duo-side{ display:flex; flex-direction:column; }
+.rad-duo-left{ padding-right:8px; }
+.rad-duo-right{ padding-left:8px; }
+
+/* Vertical divider */
+.rad-duo-divider{
+  width:1px; height:40px; background:#e5e7eb;
+}
+
+/* Labels + values */
+.rad-duo-label{
+  font-size:12px;
+  color:#6b7280;
+  margin-bottom:6px;
+}
+
+.rad-duo-value{
+  line-height:1;
+  font-weight:700;
+  font-size:34px;
+  letter-spacing:0.5px;
+}
+
+.val-blue{ color:#4f8cff; }
+.val-red{ color:#d5462e; }
+.val-green{ color:#0ea75a; }
+
+/* Panel & title */
+.rad-panel { margin-top:12px; }
+.rad-panel-title{ margin:0; font-size:15px; font-weight:600; color:#374151; }
+
+/* Matrix header bar: title left, button right, spacing below */
+.rad-matrix-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:8px;
+}
+
+/* ---------- TABLE (center everything) ---------- */
+.rad-table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  border:1px solid #e6e6e6;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+/* Center table headers */
+.rad-table thead th{
+  background:#f8fafc;
+  text-align:center;
+  padding:10px 12px;
+  font-size:13px;
+  color:#111827;
+  border-bottom:1px solid #e6e6e6;
+}
+
+/* Center body cells horizontally + vertically */
+.rad-table td{
+  padding:12px;
+  border-bottom:1px solid #f1f5f9;
+  vertical-align:middle;     /* vertical center */
+  text-align:center;         /* horizontal center */
+  height:58px;               /* consistent row height */
+}
+
+/* Ensure inner lines (class + subject) are centered too */
+.rad-table td .rad-matrix-class,
+.rad-table td .rad-matrix-sub{
+  text-align:center;
+}
+
+/* Class label in matrix cell: DARK PURPLE, UPPERCASE, medium bold */
+.rad-matrix-class{
+  text-transform:uppercase;
+  color:#3b1d8f;
+  font-weight:600;
+  margin-bottom:2px;
+}
+.rad-matrix-sub{ color:#374151; opacity:.9; }
+
+/* Buttons (theme-ish) */
+.rad-btn.small{
+  padding:8px 12px;
+  border-radius:8px;
+  border:0;
+  background:#1d4ed8;
+  color:#fff;
+  cursor:pointer;
+  box-shadow:0 3px 10px rgba(2,6,23,.08);
+}
+
+/* Utilities */
+.rad-empty{ color:#6b7280; padding:6px 2px; }
+
+/* Responsive */
+@media (max-width: 1100px){
+  .rad-duo-cards{ grid-template-columns: repeat(2, minmax(240px,1fr)); gap:20px; }
+}
+@media (max-width: 640px){
+  .rad-duo-cards{ grid-template-columns: 1fr; gap:16px; }
+  
+  /* Conflicts panel styling (small & subtle) */
+.rad-conflict { margin:8px 0 12px 0; padding:10px 12px; border-radius:8px; background:#fff; border:1px solid #efeef6; }
+.rad-conflict-hdr { font-weight:700; color:#111827; margin-bottom:6px; font-size:13px; }
+.rad-conflict-list { margin:0 0 0 14px; padding:0; list-style:disc; color:#374151; }
+.rad-conflict-list li { margin:4px 0; font-size:13px; }
+
+}

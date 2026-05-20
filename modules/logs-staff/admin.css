@@ -1,0 +1,89 @@
+/* modules/logs-staff/admin.css */
+
+.sl-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: nowrap;          /* ✅ keep everything on one line */
+  white-space: nowrap;        /* ✅ prevent wrapping of text */
+  overflow-x: auto;           /* ✅ allow horizontal scroll on small screens */
+}
+
+.sl-head-left h2{ margin:0; font-size:20px; font-weight:700; color:#111827; }
+.sl-head-right{ display:flex; align-items:center; gap:10px; }
+.sl-now{ font-size:13px; padding:8px 10px; border-radius:10px; background:#f7fafc; border:1px solid #e5e7eb; }
+
+.sl-btn{ background:#0f172a; color:#fff; border:0; border-radius:8px; padding:8px 12px; cursor:pointer; }
+.sl-btn.small{ padding:6px 10px; font-size:12px; }
+.sl-btn.ghost{ background:#fff; color:#374151; border:1px solid #e5e7eb; }
+.sl-btn.green{ background:linear-gradient(180deg,#10b981,#059669); }
+.sl-btn.primary{ background:linear-gradient(180deg,#3b82f6,#1d4ed8); }
+.sl-btn:disabled{ opacity:.5; cursor:not-allowed; }
+
+.sl-select,
+.sl-input {
+  width: 100%;
+  height: 42px;               /* Increased height for better vertical space */
+  padding: 10px 12px;         /* Balanced top and bottom padding */
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  box-sizing: border-box;
+  background: #fff;
+  line-height: 1.35;          /* Prevents text clipping */
+  appearance: none;           /* Consistent dropdown look */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.sl-remark{ width:160px; padding:6px 8px; border:1px solid #e5e7eb; border-radius:6px; margin-right:6px; }
+
+/* --- FILTERS: exactly two rows of fields --- */
+.sl-filters{ padding:12px; margin-bottom:10px; }
+.sl-f-row{ display:flex; gap:12px; align-items:flex-end; flex-wrap:wrap; margin-bottom:10px; }
+.sl-f-col{ flex:1 1 220px; min-width:160px; }
+.sl-f-col label{ display:block; font-size:13px; font-weight:600; color:#374151; margin-bottom:6px; }
+
+/* Delete controls (show only when filters toggled) */
+.sl-delete{ display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px; margin-bottom:12px; }
+.sl-delete-left{ display:flex; align-items:center; gap:10px; flex:1 1 auto; }
+.sl-delete-label{ font-size:13px; font-weight:600; color:#374151; white-space:nowrap; }
+.sl-delete-right{ display:flex; align-items:center; gap:8px; white-space:nowrap; }
+.sl-delete-count{ font-weight:600; color:#374151; }
+
+.sl-panel{ background:#fff; border:1px solid #eef2f6; border-radius:8px; padding:10px; box-shadow:0 6px 18px rgba(15,23,42,.03); }
+.sl-table{ width:100%; border-collapse:collapse; font-size:13px; }
+.sl-table thead th{ background:#eef4ff; color:#2b2b7a; padding:10px; border:1px solid #e6eef8; text-align:center; }
+.sl-table tbody td{ border:1px solid #eef2f6; padding:10px; vertical-align:middle; text-align:center; }
+.sl-dim{ color:#6b7280; font-size:12px; }
+.sl-delta{ color:#6b7280; font-size:12px; margin-bottom:4px; }
+
+/* Status chips */
+.sl-chip{ display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:600; color:#111827; background:#e5e7eb; }
+.sl-chip.green{ background:#dcfce7; color:#166534; }
+.sl-chip.yellow{ background:#fef3c7; color:#92400e; }
+.sl-chip.red{ background:#fee2e2; color:#991b1b; }
+.sl-chip.gray{ background:#e5e7eb; color:#374151; }
+
+/* Empty cell */
+.sl-empty{ text-align:center; color:#6b7280; padding:16px; }
+
+/* Pager */
+.sl-pager{ display:flex; gap:8px; align-items:center; justify-content:flex-end; margin-top:10px; }
+.sl-page{ color:#374151; }
+
+/* SN red check */
+.sl-sn-check{ color:#ef4444; font-weight:800; font-size:16px; line-height:1; }
+
+@media (max-width:900px){
+  .sl-f-col{ flex:1 1 45%; }
+  
+  @-moz-document url-prefix() {
+  .sl-select {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+}
+
+}

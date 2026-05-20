@@ -1,0 +1,117 @@
+/* timetables/add/admin.css
+   Layout restored to requested design:
+   - classroom full width
+   - day tabs fill row (no gaps)
+   - period card toggle on right
+   - Add Another Period is full-width green bar
+   - Save Timetable centered
+   - smaller fonts so UI not oversized
+*/
+
+/* container basics */
+.rt-headerbar { margin-bottom:12px; }
+.rt-headerbar h2 { margin:0; font-size:24px; color:#374151; font-weight:600; }
+.rt-headerbar .rt-sub { color:#6b7280; font-size:13px; margin-top:6px; display:block; }
+
+/* panel */
+.rt-panel { background:#fff; border-radius:8px; padding:18px; border:1px solid #eef2f6; box-shadow:0 6px 18px rgba(15,23,42,0.03); }
+
+/* inputs */
+label { display:block; margin-bottom:6px; font-size:13px; color:#374151; }
+.rad-select, .rad-input { width:100%; padding:10px 12px; border-radius:8px; border:1px solid #e6edf0; background:#fbfdff; box-sizing:border-box; font-size:14px; }
+
+/* apply monday row */
+.rt-apply { margin-top:12px; display:flex; gap:8px; align-items:center; font-size:14px; color:#374151; }
+
+/* days tabs fill container with equal width */
+.rt-days-tabs { display:flex; gap:8px; margin-top:14px; }
+.rt-day-tab {
+  flex:1 1 0;
+  background:#f5f8fb;
+  border-radius:8px;
+  padding:10px 6px;
+  border:1px solid transparent;
+  text-align:center;
+  font-weight:600;
+  color:#1f2937;
+  cursor:pointer;
+  white-space:nowrap;
+  font-size:13px;
+}
+.rt-day-tab.active { background:#ffffff; border-color:#e6edf3; box-shadow:0 2px 6px rgba(2,6,23,0.03); color:#111827; }
+
+/* periods container */
+.rt-periods-container { margin-top:18px; }
+
+/* period card */
+.rt-period { border:1px solid #eef2f6; border-radius:6px; margin-bottom:12px; overflow:hidden; background:#fff; }
+.rt-period-head { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; background:#fbfdff; cursor:pointer; }
+.rt-period-title { font-size:15px; font-weight:400; color:#1f2937; } /* normal weight */
+.rt-toggle-wrap { display:flex; align-items:center; }
+.rt-toggle { background:#374151; color:#fff; border:0; width:40px; height:36px; border-radius:6px; cursor:pointer; }
+
+/* period body (collapsible) */
+.rt-period-body { display:none; padding:14px; }
+.rt-period-body.open { display:block; }
+
+/* form controls inside period */
+.rt-times-row { display:flex; gap:18px; margin-top:8px; align-items:flex-end; flex-wrap:wrap; }
+.rt-times-col { flex:1 1 240px; min-width:160px; }
+.rt-times-col label { font-size:13px; color:#6b7280; margin-bottom:8px; }
+
+/* custom time spinner minimal/professional */
+.rt-time-spinner { display:inline-flex; align-items:center; gap:6px; font-size:14px; background:transparent; }
+.rt-time-spinner select {
+  -webkit-appearance:none; -moz-appearance:none; appearance:none;
+  border:0; background:transparent; padding:6px 8px; border-radius:6px; font-size:14px; color:#111827; cursor:pointer;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.03);
+}
+.rt-time-colon { color:#374151; font-weight:400; padding-top:6px; }
+
+/* subject input */
+.rt-subject { margin-top:6px; }
+
+/* remove bold from period title (already normal weight) and slightly smaller */
+.rt-period-title { font-weight:400; font-size:15px; }
+
+/* Remove heavy borders on spinner and match font */
+.rad-select, .rad-input { font-size:14px; }
+
+/* remove button wrap overflow */
+.rt-period-body .rad-btn { margin-top:12px; }
+
+/* Add Another Period full width green bar */
+.rt-add-bar {
+  display:block;
+  width:100%;
+  padding:12px 16px;
+  margin-top:12px;
+  border-radius:8px;
+  background: linear-gradient(180deg,#10b981,#059669);
+  color:#fff;
+  font-weight:700;
+  border:0;
+  cursor:pointer;
+  text-align:center;
+  font-size:15px;
+}
+
+/* Save button centered and slightly larger */
+.rt-save-wrap { margin-top:18px; text-align:center; }
+.rt-save-wrap .rad-btn { min-width:220px; padding:10px 18px; font-size:15px; }
+
+/* ghost remove button appearance */
+.rt-remove { background:#fff; border:1px solid #e6edf0; color:#374151; }
+
+/* small toast */
+.rt-toast { position:fixed; top:18px; right:18px; background:rgba(15,23,42,0.95); color:#fff; padding:10px 14px; border-radius:8px; box-shadow:0 6px 20px rgba(2,6,23,0.4); font-size:13px; z-index:120000; opacity:0; transform:translateY(-6px); transition: opacity .2s, transform .2s; }
+.rt-toast.show { opacity:1; transform:translateY(0); }
+
+/* responsive */
+@media (max-width:900px){
+  .rt-days-tabs { gap:6px; }
+  .rt-day-tab { padding:8px 6px; font-size:13px; }
+  .rt-times-row { flex-direction:column; }
+  .rt-times-col { min-width:100%; }
+  .rt-add-bar { font-size:14px; padding:10px; }
+}

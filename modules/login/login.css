@@ -1,0 +1,32 @@
+/* modules/login/login.css - improved login styling */
+.rad-login-wrap { max-width:640px; margin:28px auto; }
+.rad-login-panel {
+  padding:22px;
+  border-radius:10px;
+  border:1px solid #eef2f6;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+.rad-login-panel h2 { margin-top:0; font-size:20px; color:#0f172a; }
+.rad-input {
+  width:100%;
+  padding:12px 14px;
+  border-radius:8px;
+  border:1px solid #e5e7eb;
+  box-sizing:border-box;
+  margin-top:8px;
+  font-size:14px;
+  background:#fafafa;
+}
+.rad-btn {
+  padding:10px 16px;
+  border-radius:10px;
+  background:#10b981;
+  color:#fff;
+  border:0;
+  cursor:pointer;
+  margin-top:12px;
+  font-weight:700;
+  box-shadow: 0 6px 18px rgba(16,185,129,0.12);
+}
+.rad-btn[disabled] { opacity:0.6; cursor:default; }
